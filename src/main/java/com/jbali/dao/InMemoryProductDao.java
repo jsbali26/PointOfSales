@@ -7,6 +7,9 @@ package com.jbali.dao;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
+
 import org.springframework.stereotype.Repository;
 
 import com.jbali.domain.Product;
@@ -32,7 +35,7 @@ public class InMemoryProductDao implements ProductDao {
 	        TO AVOID OVERKILL AND BASED ON WHAT THIS CODING ASSIGNMENT DEMANDS, A SIMPLE HASHMAP IS USED HERE
 	  
 	 */
-	private Map<String, Integer> inMemoryCart = new HashMap<String, Integer>();
+	private ConcurrentMap<String, Integer> inMemoryCart = new ConcurrentHashMap<String, Integer>();
 	
 	
 	/**
@@ -126,7 +129,7 @@ public class InMemoryProductDao implements ProductDao {
 	 */
 	@Override
 	public void clearCart(){
-		this.inMemoryCart = new HashMap<String, Integer>();
+		this.inMemoryCart = new ConcurrentHashMap<String, Integer>();
 	}
 	
 }

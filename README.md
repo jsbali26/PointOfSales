@@ -1,20 +1,23 @@
-"# PointOfSales" 
+"# PointOfSales:" 
 
 1. This project is a Gradle Java project created with SpringBoot 1.4 framework.
    Output of this project is an executable jar.
    
+2. This project would work good for single user sessions only and it won't maintain the state of previous session (user's cart).
+   That is something that this project doesn't intend to demonstrate.
    
-2. You can import the project in to your IDE and then, in the project root folder, run the following command to build the project
+   
+3. You can import the project in to your IDE and then, in the project root folder, run the following command to build the project
 
              project root> gradle clean build
 
-3. For running the integration tests,    go to  src/test/java folder.
+4. For running the integration tests,    go to  src/test/java folder.
    There you will find PointOfSalesApplicationTests.java
    This class has all the Integration Test cases you wanted to be covered at the minimum.
    These test cases written in SpringBoot 1.4 would spin their own tomcat and start the REST service and then run the 
    integration tests.
 
- 4. Alternatively for testing, you can start the service by executing the jar using the following command:
+5. Alternatively for testing, you can start the service by executing the jar using the following command:
    
    project root> java -jar build/libs/PointOfSales-1.0.0-SNAPSHOT.jar
 
